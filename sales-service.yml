@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: sales-service
+  main:
+    allow-bean-definition-overriding: true
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: MYSQL

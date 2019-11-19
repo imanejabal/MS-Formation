@@ -29,7 +29,10 @@ keycloak:
     secret: 0d888736-5e14-44e7-98f1-20c42bfb38e3
   principal-attribute: preferred_username
   bearer-only: true 
-      
+  
+swagger-ui:
+  client: swagger-ui
+  secret: 4c500968-7abd-4c5e-a0af-fc3d543515d9      
 
 ---
 spring:

@@ -1,0 +1,45 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: sales-service
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/sales_db2?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: Lydec2020
+  sleuth:
+    sampler: 
+      probability: 1
+  zipkin: 
+    base-url: http://localhost:9411
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+keycloak:
+  realm: formation-ms
+  auth-server-url: http://localhost:8080/auth
+  resource: sales-app
+  credentials:
+    secret: 0d888736-5e14-44e7-98f1-20c42bfb38e3
+  principal-attribute: preferred_username
+  bearer-only: true 
+      
+
+---
+spring:
+  profiles: test
+  datasource:
+        url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        username: sa
+        password: sa
+        driver-class-name: org.h2.Driver
+  jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate :
+          ddl-auto: create

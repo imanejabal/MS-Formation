@@ -26,7 +26,7 @@ keycloak:
   credentials:
     secret: ff737abf-ddbc-41af-9ed9-d9c69ef2d02c
   principal-attribute: preferred_username
-  bearer-only: true 
+  bearer-only: true
 swagger-ui:
   client: swagger-ui
   secret: 4c500968-7abd-4c5e-a0af-fc3d543515d9
